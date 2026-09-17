@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Database
+social.db
+*.db
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+
+# System files
+.DS_Store
+
+# OS generated files
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Testing
+coverage/
+.nyc_output/
