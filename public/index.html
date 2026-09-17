@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse — Modern Social Media Platform</title>
+  <meta name="description" content="Connect, share updates, and discover inspiring creators on Pulse.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <a href="/" class="brand">
+          <div class="brand-icon">⚡</div>
+          <span>Pulse</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <a href="/">
+              <span class="nav-icon">🏠</span>
+              <span>Home Feed</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/profile.html" class="my-profile-link">
+              <span class="nav-icon">👤</span>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" onclick="Auth.showModal()">
+              <span class="nav-icon">⇄</span>
+              <span>Switch User</span>
+            </a>
+          </li>
+        </ul>
+
+        <button class="create-post-sidebar-btn" onclick="document.getElementById('postContentInput').focus()">
+          <span>✦ New Post</span>
+        </button>
+      </div>
+
+      <!-- Current User Badge in Sidebar -->
+      <div class="user-badge-container" id="sidebarUserBadge"></div>
+    </aside>
+
+    <!-- CENTER MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Sticky Feed Tabs Header -->
+      <div class="feed-header">
+        <div class="feed-tabs">
+          <button class="feed-tab active" data-feed="all">For You</button>
+          <button class="feed-tab" data-feed="following">Following Feed</button>
+        </div>
+      </div>
+
+      <!-- Create Post Box -->
+      <section class="create-post-card">
+        <div class="create-post-top">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=alexrivera" class="author-avatar" id="createPostAvatar" alt="User Avatar">
+          <textarea class="post-textarea" id="postContentInput" placeholder="What's sparking in your mind? Type a thought, #hashtag, or @mention..."></textarea>
+        </div>
+
+        <div class="post-media-preview" id="postPreviewContainer">
+          <button class="remove-preview-btn" id="removePreviewBtn">✕</button>
+          <img id="postPreviewImg" src="" alt="Preview">
+        </div>
+
+        <div class="create-post-bottom">
+          <div class="post-attachment-inputs">
+            <button class="attach-btn" id="addImageBtn">
+              <span>🖼️</span> <span>Add Image URL</span>
+            </button>
+            <input type="hidden" id="postImageInput">
+          </div>
+          <button class="btn btn-primary btn-sm" id="submitPostBtn" style="padding: 0.55rem 1.4rem; font-size: 0.95rem;">
+            Publish
+          </button>
+        </div>
+      </section>
+
+      <!-- Post Feed List -->
+      <section class="post-feed" id="postsFeed"></section>
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="right-sidebar">
+      <!-- Who to Follow Widget -->
+      <div class="widget-card">
+        <h3 class="widget-title">Who to Follow</h3>
+        <div id="suggestedUsersList">
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Finding interesting creators...</div>
+        </div>
+      </div>
+
+      <!-- Trending Topics Widget -->
+      <div class="widget-card">
+        <h3 class="widget-title">Trending in Tech</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.88rem;">
+          <div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">Design Systems · Trending</div>
+            <div style="font-weight: 700; color: var(--text-primary);">#Glassmorphism2026</div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">14.2K posts</div>
+          </div>
+          <div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">Web Development · Trending</div>
+            <div style="font-weight: 700; color: var(--text-primary);">#FullStackInternship</div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">8.5K posts</div>
+          </div>
+          <div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">Open Source · Trending</div>
+            <div style="font-weight: 700; color: var(--text-primary);">#CodeAlpha</div>
+            <div style="color: var(--text-muted); font-size: 0.78rem;">6.1K posts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div style="font-size: 0.78rem; color: var(--text-muted); padding: 0 0.5rem; line-height: 1.6;">
+        Pulse Social Platform © 2026<br>
+        Task 2 Full Stack Internship Project for CodeAlpha.
+      </div>
+    </aside>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      App.init();
+    });
+  </script>
+</body>
+</html>
